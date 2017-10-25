@@ -17,10 +17,10 @@ if not os.path.exists(os.getenv("HOME") + '/.ssh-ec2.conf.yml'):
     f = open(os.getenv("HOME") + '/.ssh-ec2.conf.yml', 'w')
     f.write("""
 tags:
-  Environment:
+  environment:
     arg: -e
     tag: network_namespace
-  Roles:
+  roles:
     arg: -r
     tag: Roles
 """)

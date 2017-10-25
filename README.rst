@@ -62,21 +62,19 @@ TODO
 ----
 
 Configuration:
-* Explicitly configure arg_longform and arg_shortform in config
-* Heirarchy of assumptions
-  - no longform?  assume tag name
-  - no tag name? assume top level
-  - no shortform?  take first letter
-  - first letter is in use? iterate through longform
-  - no free letters?  iterate through alphabet
-* Blacklist (fail) -h, -u, -i, --help, --user, --interactive
-* Greylist  (warn) on ssh command
-
+  * Explicitly configure arg_longform and arg_shortform in config
+  * Heirarchy of assumptions
+    - no longform?  assume tag name
+    - no tag name? assume top level
+    - no shortform?  take first letter
+    - first letter is in use? iterate through longform
+    - no free letters?  iterate through alphabet
+  * Blacklist (fail) -h, -u, -i, --help, --user, --interactive
+  * Greylist  (warn) on ssh command
 
 Filters:
   * Interactive Mode
     - Allow "None" as an option for each tag list (nice to have)
-
 
 Code Cleanup:
   * `if args.user != "":` <-- this needs to be cleaner
