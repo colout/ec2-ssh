@@ -70,7 +70,6 @@ def main():
         }
     ]
 
-
     # Initialize filters from arguments
     for cfg_tag in cfg['tags']:
         if vars(args)[cfg_tag]:
@@ -131,28 +130,6 @@ def get_host_name(args):
             ]
         host = inquirer.prompt(questions)["host"]
     return host[2]
-
-
-def ec2_host_parser():
-    parser = argparse.ArgumentParser(
-        description="Output ec2 public host names for active hosts in random "
-                    "order, optionally match a tag which defaults to 'Name' "
-                    "or environment variable EC2_HOST_TAG."
-    )
-    parser.add_argument('value', type=str, nargs='?',
-                        help='the value the tag should equal')
-    parser.add_argument('-t', '--tag', type=str,
-                        default=os.getenv('EC2_HOST_TAG', 'Name'),
-                        help='which tag to search')
-    return parser
-
-
-def host():
-    args = ec2_host_parser().parse_args()
-    instances = get_instance_list(args.tag, args.value)
-    random.shuffle(instances)
-    for instance in instances:
-        print(instance)
 
 def add_filter_from_gui (applied_filters, tag):
     options = get_list_of_filters(applied_filters, tag)

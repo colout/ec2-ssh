@@ -25,7 +25,6 @@ with codecs.open('HISTORY.rst', 'r', 'utf-8') as history_file:
 
 console_scripts = [
     'ssh-ec2 = ec2_ssh:main',
-    'ec2-host = ec2_ssh:host',
 ]
 
 
