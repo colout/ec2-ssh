@@ -86,7 +86,7 @@ def main():
 
     # TODO: Let's be elegant about this:
     if args.user != "":
-        username = args.user & "@"
+        username = args.user + "@"
     else:
         username = args.user
 
